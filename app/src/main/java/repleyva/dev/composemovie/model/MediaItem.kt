@@ -1,4 +1,4 @@
-package repleyva.dev.composemovie
+package repleyva.dev.composemovie.model
 
 data class MediaItem(
     val id: Int,
