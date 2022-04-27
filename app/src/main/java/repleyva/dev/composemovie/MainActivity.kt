@@ -7,12 +7,9 @@ import repleyva.dev.composemovie.ui.ComposeMovie
 import repleyva.dev.composemovie.ui.main.MainScreen
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            ComposeMovie {
-                MainScreen()
-            }
-        }
+        setContent { ComposeMovie { MainScreen() } }
     }
 }

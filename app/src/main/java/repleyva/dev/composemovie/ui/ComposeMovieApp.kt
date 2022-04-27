@@ -10,7 +10,6 @@ import repleyva.dev.composemovie.ui.theme.ComposeMovieTheme
 @Composable
 fun ComposeMovie(content: @Composable () -> Unit) =
     ComposeMovieTheme {
-        // A surface container using the 'background' color from the theme
         Surface(
             modifier = Modifier.fillMaxSize(),
             color = MaterialTheme.colors.background
