@@ -24,7 +24,7 @@ import repleyva.dev.composemovie.ui.screens.common.ItemThump
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun MediaList(navController: NavHostController, modifier: Modifier = Modifier) {
+fun MediaList(onMediaClick: (MediaItem) -> Unit, modifier: Modifier = Modifier) {
     LazyVerticalGrid(
         contentPadding = PaddingValues(dimensionResource(id = R.dimen.padding_xsmall)),
         cells = GridCells.Adaptive(dimensionResource(id = R.dimen.cell_min_width)),
@@ -32,9 +32,9 @@ fun MediaList(navController: NavHostController, modifier: Modifier = Modifier) {
     ) {
         items(getMedia()) {
             MediaViewItem(
-                it,
-                navController,
-                Modifier.padding(dimensionResource(id = R.dimen.padding_xsmall))
+                mediaItem = it,
+                onClick = { onMediaClick(it) },
+                modifier = Modifier.padding(dimensionResource(id = R.dimen.padding_xsmall))
             )
         }
     }
@@ -43,11 +43,11 @@ fun MediaList(navController: NavHostController, modifier: Modifier = Modifier) {
 @Composable
 fun MediaViewItem(
     mediaItem: MediaItem,
-    navController: NavHostController,
+    onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Column(
-        modifier = modifier.clickable { navController.navigate("detail/${mediaItem.id}") }
+        modifier = modifier.clickable (onClick = onClick)
     ) {
         ItemThump(mediaItem)
         ItemTitle(mediaItem)
