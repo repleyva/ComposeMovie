@@ -5,7 +5,7 @@ import androidx.navigation.navArgument
 
 sealed class Routes(
     val baseRoute: String,
-    private val navArgs: List<NavArg> = emptyList()
+    val navArgs: List<NavArg> = emptyList()
 ) {
     val route = run {
         val argKeys = navArgs.map { "{${it.key}}" }
@@ -17,7 +17,7 @@ sealed class Routes(
     val args = navArgs.map { navArgument(it.key) { type = it.navType } }
 
     object Main : Routes("main")
-    object Detail : Routes("detail"){
+    object Detail : Routes("detail", listOf(NavArg.MediaId)){
         fun createNavRoute(mediaId: Int) = "$baseRoute/$mediaId"
     }
 }

@@ -47,7 +47,7 @@ fun MediaViewItem(
     modifier: Modifier = Modifier
 ) {
     Column(
-        modifier = modifier.clickable (onClick = onClick)
+        modifier = modifier.clickable(onClick = onClick)
     ) {
         ItemThump(mediaItem)
         ItemTitle(mediaItem)
