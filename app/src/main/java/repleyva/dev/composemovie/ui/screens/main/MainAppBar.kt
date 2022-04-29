@@ -1,4 +1,4 @@
-package repleyva.dev.composemovie
+package repleyva.dev.composemovie.ui.screens.main
 
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
@@ -11,6 +11,7 @@ import androidx.compose.material.icons.filled.Share
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
+import repleyva.dev.composemovie.R
 
 @Composable
 fun MainAppBar() =
